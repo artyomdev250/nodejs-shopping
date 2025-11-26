@@ -16,15 +16,31 @@ exports.signin = async (req, res) => {
             return res.status(400).json({ message: "Invalid credentials" });
         }
 
-        const token = jwt.sign(
+        // ACCESS TOKEN
+        const accessToken = jwt.sign(
             { id: user._id, email: user.email },
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: process.env.ACCESS_TOKEN_EXPIRY }
         );
 
+        // REFRESH TOKEN
+        const refreshToken = jwt.sign(
+            { id: user._id, email: user.email },
+            process.env.REFRESH_TOKEN_SECRET,
+            { expiresIn: process.env.REFRESH_TOKEN_EXPIRY }
+        );
+
+        // Send refresh token as HTTP-only cookie
+        res.cookie("refreshToken", refreshToken, {
+            httpOnly: true,
+            secure: false,
+            sameSite: "strict",
+            path: "/"
+        });
+
         return res.json({
             message: "Login successful",
-            accessToken: token
+            accessToken
         });
 
     } catch (err) {
