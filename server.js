@@ -15,6 +15,10 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 
+app.get('/', (req, res) => {
+    res.send('Hello from Node server!');
+});
+
 app.listen(process.env.PORT, () =>
     console.log(`Server running on port ${process.env.PORT}`)
 );
