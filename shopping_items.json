@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Wireless Mouse",
+        "category": "Electronics",
+        "price": 19.99,
+        "stock": 50,
+        "description": "A smooth, responsive Bluetooth wireless mouse.",
+        "brand": "LogiTech"
+    },
+    {
+        "name": "Bluetooth Headphones",
+        "category": "Electronics",
+        "price": 49.99,
+        "stock": 30,
+        "description": "Noise-cancelling over-ear headphones.",
+        "brand": "Sony"
+    },
+    {
+        "name": "Organic Apples",
+        "category": "Groceries",
+        "price": 3.99,
+        "stock": 200,
+        "description": "Fresh organic apples sold per bag.",
+        "brand": "Farm Fresh"
+    },
+    {
+        "name": "Jeans",
+        "category": "Clothing",
+        "price": 29.99,
+        "stock": 60,
+        "description": "Slim fit blue jeans.",
+        "brand": "DenimCo"
+    },
+    {
+        "name": "Running Shoes",
+        "category": "Footwear",
+        "price": 69.99,
+        "stock": 15,
+        "description": "Lightweight running shoes.",
+        "brand": "Nike"
+    },
+    {
+        "name": "Coffee Maker",
+        "category": "Home Appliances",
+        "price": 89.99,
+        "stock": 25,
+        "description": "Automatic drip coffee maker with timer.",
+        "brand": "Cuisinart"
+    },
+    {
+        "name": "Notebook",
+        "category": "Stationery",
+        "price": 2.49,
+        "stock": 500,
+        "description": "College-ruled spiral notebook.",
+        "brand": "PaperMate"
+    },
+    {
+        "name": "Water Bottle",
+        "category": "Accessories",
+        "price": 9.99,
+        "stock": 80,
+        "description": "Stainless steel reusable bottle.",
+        "brand": "HydroMax"
+    },
+    {
+        "name": "Smart Watch",
+        "category": "Electronics",
+        "price": 199.99,
+        "stock": 25,
+        "description": "Fitness tracking smart watch.",
+        "brand": "FitTech"
+    },
+    {
+        "name": "Office Chair",
+        "category": "Furniture",
+        "price": 129.99,
+        "stock": 10,
+        "description": "Ergonomic office chair with lumbar support.",
+        "brand": "ErgoPro"
+    }
+]
