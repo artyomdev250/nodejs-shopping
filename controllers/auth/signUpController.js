@@ -1,4 +1,4 @@
-const User = require('../mongodb/models/User');
+const User = require('../../mongodb/models/User');
 
 exports.signup = async (req, res) => {
     try {

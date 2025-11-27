@@ -1,4 +1,4 @@
-const BlacklistedToken = require("../mongodb/models/BlacklistedToken");
+const BlacklistedToken = require("../../mongodb/models/BlacklistedToken");
 
 exports.logout = async (req, res) => {
     try {
