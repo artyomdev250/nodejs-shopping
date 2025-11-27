@@ -1,4 +1,4 @@
-const Item = require("../mongodb/models/Item");
+const Item = require("../../mongodb/models/Item");
 
 exports.getAllItems = async (req, res) => {
     try {

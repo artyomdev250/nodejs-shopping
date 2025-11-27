@@ -1,4 +1,4 @@
-const User = require('../mongodb/models/User');
+const User = require('../../mongodb/models/User');
 const jwt = require('jsonwebtoken');
 
 exports.signin = async (req, res) => {

@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const { signup } = require("../controllers/signUpController");
-const { signin } = require("../controllers/signInController");
-const { refresh } = require("../controllers/refreshTokenController");
-const { logout } = require("../controllers/signOutController");
+const { signup } = require("../controllers/auth/signUpController");
+const { signin } = require("../controllers/auth/signInController");
+const { refresh } = require("../controllers/auth/refreshTokenController");
+const { logout } = require("../controllers/auth/signOutController");
 
 const checkBlacklist = require("../middleware/checkBlacklist");
 
