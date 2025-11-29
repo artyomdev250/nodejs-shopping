@@ -33,9 +33,9 @@ exports.signin = async (req, res) => {
         // Send refresh token as HTTP-only cookie
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure: false,
-            sameSite: "strict",
-            path: "/"
+            secure: true,
+            sameSite: "none",
+            path: "/",
         });
 
         return res.json({
