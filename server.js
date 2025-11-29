@@ -1,4 +1,3 @@
-// server/server.js
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -27,7 +26,9 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
+
+app.options("/api/auth/*", cors(corsOptions));
+app.options("/api/user/*", cors(corsOptions));
 
 connectDB();
 app.use(express.json());
