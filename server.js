@@ -11,20 +11,9 @@ const app = express();
 
 connectDB();
 
-const allowedOrigins = [
-    "http://localhost:5173",
-    "https://react-typescript-shopping.vercel.app/",
-];
-
 app.use(
     cors({
-        origin: (origin, cb) => {
-            if (!origin || allowedOrigins.includes(origin)) {
-                cb(null, true);
-            } else {
-                cb(new Error("Not allowed by CORS"));
-            }
-        },
+        origin: "http://localhost:5173",
         credentials: true,
     })
 );

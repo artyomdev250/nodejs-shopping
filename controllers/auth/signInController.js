@@ -1,8 +1,6 @@
 const User = require('../../mongodb/models/User');
 const jwt = require('jsonwebtoken');
 
-const isProd = process.env.NODE_ENV === "production";
-
 exports.signin = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -35,9 +33,9 @@ exports.signin = async (req, res) => {
         // Send refresh token as HTTP-only cookie
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure: isProd,
-            sameSite: isProd ? "none" : "lax",
-            path: "/",
+            secure: false,
+            sameSite: "strict",
+            path: "/"
         });
 
         return res.json({
