@@ -1,6 +1,8 @@
 const User = require('../../mongodb/models/User');
 const jwt = require('jsonwebtoken');
 
+const isProd = process.env.NODE_ENV === "production";
+
 exports.signin = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -16,26 +18,23 @@ exports.signin = async (req, res) => {
             return res.status(400).json({ message: "Invalid credentials" });
         }
 
-        // ACCESS TOKEN
         const accessToken = jwt.sign(
             { id: user._id, email: user.email },
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: process.env.ACCESS_TOKEN_EXPIRY }
         );
 
-        // REFRESH TOKEN
         const refreshToken = jwt.sign(
             { id: user._id, email: user.email },
             process.env.REFRESH_TOKEN_SECRET,
             { expiresIn: process.env.REFRESH_TOKEN_EXPIRY }
         );
 
-        // Send refresh token as HTTP-only cookie
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure: false,
-            sameSite: "strict",
-            path: "/"
+            secure: isProd,              // true on Vercel (https), false in local server dev
+            sameSite: isProd ? "none" : "lax",
+            path: "/",
         });
 
         return res.json({

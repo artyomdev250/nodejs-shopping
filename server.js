@@ -11,10 +11,22 @@ const app = express();
 
 connectDB();
 
+const allowedOrigins = [
+    "http://localhost:5173",            // Vite dev
+    // when you deploy frontend later, add it here too
+    // "https://your-frontend.vercel.app",
+];
+
 app.use(
     cors({
-        origin: "http://localhost:5173",
-        credentials: true,
+        origin: (origin, cb) => {
+            if (!origin || allowedOrigins.includes(origin)) {
+                cb(null, true);
+            } else {
+                cb(new Error("Not allowed by CORS"));
+            }
+        },
+        credentials: true, // <-- allow cookies from browser
     })
 );
 
