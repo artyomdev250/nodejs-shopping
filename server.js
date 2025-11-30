@@ -13,7 +13,7 @@ connectDB();
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://react-typescript-shopping.vercel.app/"
+    "https://react-typescript-shopping.vercel.app"
 ];
 
 app.use(
