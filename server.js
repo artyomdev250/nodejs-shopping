@@ -12,9 +12,8 @@ const app = express();
 connectDB();
 
 const allowedOrigins = [
-    "http://localhost:5173",            // Vite dev
-    // when you deploy frontend later, add it here too
-    // "https://your-frontend.vercel.app",
+    "http://localhost:5173",
+    "https://react-typescript-shopping.vercel.app/"
 ];
 
 app.use(
@@ -26,7 +25,7 @@ app.use(
                 cb(new Error("Not allowed by CORS"));
             }
         },
-        credentials: true, // <-- allow cookies from browser
+        credentials: true,
     })
 );
 
